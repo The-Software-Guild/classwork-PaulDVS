@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="productPres" class="presentation.ProductPresentationImpl">
+		<constructor-arg name="productService" ref="productServ"></constructor-arg>
+	</bean>
+	
+	<bean id="productServ" class="service.ProductServiceImpl">
+		<constructor-arg name="productDoa" ref="productDoa"></constructor-arg>
+	</bean>
+	
+	<bean id="productDoa" class="persistence.ProductDoaImpl"></bean>
+</beans>
